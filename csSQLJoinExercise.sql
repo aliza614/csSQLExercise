@@ -3,7 +3,7 @@ using the products table and the categories table, return the product name and t
  select products.Name, categories.Name from products 
 	inner join categories on categories.CategoryID=products.CategoryID;
 /* joins: find all product names, product prices, and products ratings that have a rating of 5 */
- select products.name, products.price, reviews.Rating from reviews right join products on products.ProductID=reviews.ProductID; 
+ select products.name, products.price, reviews.Rating from reviews right join products on products.ProductID=reviews.ProductID where reviews.Rating=5; 
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
 select e.*, sum(s.Quantity) from employees as e left join sales as s on e.EmployeeID= s.EmployeeID group by e.EmployeeID;
 /* joins: find the name of the department, and the name of the category for Appliances and Games */
