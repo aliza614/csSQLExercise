@@ -13,7 +13,7 @@ select d.Name, c.Name from categories as c right join departments as d on d.Depa
  for Eagles: Hotel California --You may need to use SUM() */
 select p.Name, sum(s.Quantity), p.Price from products as p left join sales as s on p.ProductID=s.ProductID where p.Name like '%Eagles: Hotel California%' group by p.productid;
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
-
+select p.Name as 'Product Name', r.Reviewer as 'Reviewer Name', r.Rating from products as p inner join reviews as r on  r.ProductID=p.ProductID where p.Name like '%Visio TV%';
 
 -- ------------------------------------------ Extra - May be difficult
 /* Your goal is to write a query that serves as an employee sales report.
